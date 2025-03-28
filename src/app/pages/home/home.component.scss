@@ -32,6 +32,10 @@ body {
     overflow-y: auto;
 }
 
+.lien {
+    text-decoration: none;
+}
+
 .video-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

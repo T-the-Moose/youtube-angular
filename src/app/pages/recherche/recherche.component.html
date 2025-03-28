@@ -1,11 +1,59 @@
 <div class="container">
     <aside class="sidebar">
         <p>Youtube</p>
+
+        <div>
+            <p>Playlist</p>
+            <ul>
+                @for (video of playlist; track playlist) {
+                <li>
+                    {{ video.snippet.title }}
+                    <div>
+                        <img [src]="deleteVideo" alt="Supprimer" (click)="supprimerVideo(video.snippet.title)">
+                    </div>
+                </li>
+                }
+            </ul>
+        </div>
     </aside>
 
+    <div class="content">
+        <form [formGroup]="rechercheForm" (ngSubmit)="onSubmit()" class="video-form">
+            <h2 class="form-title">Formulaire de recherche</h2>
 
+            <div>
+                <div>
+                    <input type="text" formControlName="recherche" name="recherche" id="recherche"
+                        class="form-control" placeholder="Rechercher une vidéo" />
+                </div>
 
-    
+                <div class="contentButton">
+                    <button type="submit" class="buttonSubmit">Rechercher</button>
+                </div>
+            </div>
+        </form>
 
+        <div class="liste-videos">
+            <ul>
+                @for (video of videos; track video.id) {
+                <li>
+                    <img [src]="video.snippet.thumbnails.default.url" alt="thumbnail" />
+                    <h2>{{ video.snippet.title }}</h2>
+                    <p>{{ video.snippet.description }}</p>
+                    <button (click)="ajouterPlayList(video)">Ajouter</button>
+                </li>
+                }
+            </ul>
+        </div>
 
+        <!-- @if (idVideoSelectionne) {
+        <div class="video-player">
+            <iframe width="560" height="315" [src]="'https://www.youtube.com/embed/' + idVideoSelectionne"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+        } -->
+    </div>
 </div>

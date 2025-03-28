@@ -33,10 +33,8 @@ export class LoginComponent {
           }
         },
         error: (error) => {
-
           console.error(error);
           alert('Email ou mot de passe incorrect.');
-          
         }
       });
     }
