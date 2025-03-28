@@ -18,22 +18,25 @@ run :
 ng g environments
 ```
 
-Files should look like :
+### Files should look like :
 
 environment.ts
+```typescript
 export const environment = {
 production: true,
     apiUrlYoutube: "https://www.googleapis.com/youtube/v3",
     apiKeyYoutube : "XXXX"
 };
+```
 
 environment.development.ts
+```typescript
 export const environment = {
     production: false,
     apiUrlYoutube: "https://www.googleapis.com/youtube/v3",
     apiKeyYoutube : "XXXX"
 };
-
+```
 
 ## Additional Resources
 
