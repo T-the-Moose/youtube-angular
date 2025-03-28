@@ -8,7 +8,8 @@
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="text" formControlName="email" name="email" id="email" class="form-control">
-                    @if (formulaireEnregistrement.get('email')?.hasError('required')){
+                    @if (formulaireEnregistrement.get('email')?.hasError('email') ||
+                        formulaireEnregistrement.get('email')?.hasError('required')){
                         <span class="error-message">Email obligatoire</span>
                     }
                 </div>
@@ -16,7 +17,8 @@
                 <div class="form-group">
                     <label for="password">Mot de Passe</label>
                     <input type="password" formControlName="password" name="password" id="password" class="form-control" required>
-                    @if (formulaireEnregistrement.get('password')?.hasError('require')) {
+                    @if (formulaireEnregistrement.get('password')?.hasError('minLength') || 
+                        formulaireEnregistrement.get('password')?.hasError('required')) {
                         <span class="error-message">Mot de passe obligatoire</span>
                     }
                 </div>
@@ -24,7 +26,7 @@
                 <div class="form-group">
                     <label for="passwordConfirm">Confirmation du mot de Passe</label>
                     <input type="password" formControlName="passwordConfirm" name="passwordConfirm" id="passwordConfirm" class="form-control" required>
-                    @if (formulaireEnregistrement.get('passwordConfirm')?.hasError('require')) {
+                    @if (formulaireEnregistrement.get('passwordConfirm')?.hasError('required')) {
                     <span class="error-message">Confirmation du mot de passe obligatoire</span>
                     }
                 </div>
@@ -32,7 +34,7 @@
                 <div class="form-group">
                     <label for="pseudo">Pseudo</label>
                     <input type="pseudo" formControlName="pseudo" name="pseudo" id="pseudo" class="form-control" required>
-                    @if (formulaireEnregistrement.get('pseudo')?.hasError('require')) {
+                    @if (formulaireEnregistrement.get('pseudo')?.hasError('required')) {
                     <span class="error-message">Pseudo obligatoire</span>
                     }
                 </div>
@@ -40,7 +42,7 @@
                 <div class="form-group">
                     <label for="cityCode">Code postal</label>
                     <input type="cityCode" formControlName="cityCode" name="cityCode" id="cityCode" class="form-control" required>
-                    @if (formulaireEnregistrement.get('cityCode')?.hasError('require')) {
+                    @if (formulaireEnregistrement.get('cityCode')?.hasError('required')) {
                     <span class="error-message">Code postal obligatoire</span>
                     }
                 </div>
@@ -48,7 +50,7 @@
                 <div class="form-group">
                     <label for="city">Ville</label>
                     <input type="city" formControlName="city" name="city" id="city" class="form-control" required>
-                    @if (formulaireEnregistrement.get('city')?.hasError('require')) {
+                    @if (formulaireEnregistrement.get('city')?.hasError('required')) {
                     <span class="error-message">Ville obligatoire</span>
                     }
                 </div>
@@ -56,7 +58,7 @@
                 <div class="form-group">
                     <label for="phone">Téléphone</label>
                     <input type="phone" formControlName="phone" name="phone" id="phone" class="form-control" required>
-                    @if (formulaireEnregistrement.get('phone')?.hasError('require')) {
+                    @if (formulaireEnregistrement.get('phone')?.hasError('required')) {
                     <span class="error-message">Mot de passe obligatoire</span>
                     }
                 </div>
