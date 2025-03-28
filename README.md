@@ -2,6 +2,11 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.4.
 
+## Need before launch
+![Attention](https://img.icons8.com/emoji/48/000000/warning-emoji.png) Attention
+
+You will need a user database for the authentication system or modify the code 
+
 ## Development server
 
 To start a local development server, run:
