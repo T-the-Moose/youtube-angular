@@ -15,9 +15,9 @@ export class RegisterComponent {
   private readonly router: Router = inject(Router);
 
   formulaireEnregistrement: FormGroup = new FormGroup({
-    email: new FormControl('',Validators.email),
-    password: new FormControl('', Validators.minLength(4)),
-    passwordConfirm: new FormControl('', Validators.minLength(4)),
+    email: new FormControl('', [Validators.email, Validators.required]),
+    password: new FormControl('', [Validators.minLength(4), Validators.required]),
+    passwordConfirm: new FormControl('', [Validators.minLength(4), Validators.required]),
     pseudo: new FormControl('', Validators.required),
     cityCode: new FormControl('', Validators.required),
     city: new FormControl('', Validators.required),
