@@ -13,7 +13,10 @@ ng serve
 ## Add Api key to run videos
 Make API Key on console.cloud.google.com
 
-run : ng g environments
+run : 
+```bash
+ng g environments
+```
 
 repo should look like :
 
@@ -21,14 +24,14 @@ environment.ts
 export const environment = {
     production: true,
     apiUrlYoutube: "https://www.googleapis.com/youtube/v3",
-    apiKeyYoutube : "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+    apiKeyYoutube : "XXXX"
 };
 
 environment.development.ts
 export const environment = {
     production: false,
     apiUrlYoutube: "https://www.googleapis.com/youtube/v3",
-    apiKeyYoutube : "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+    apiKeyYoutube : "XXXX"
 };
 
 
