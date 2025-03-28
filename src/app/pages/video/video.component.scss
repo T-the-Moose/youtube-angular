@@ -1,0 +1,28 @@
+.titre {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 10);
+}
+
+.video-info {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.video-info h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.video-info p {
+    font-size: 16px;
+    color: #666;
+}
+
+

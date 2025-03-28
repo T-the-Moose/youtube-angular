@@ -10,13 +10,13 @@ export class YoutubeService {
 
   private readonly apiKeyYoutube = environment.apiYoutube;
   private readonly apiUrlYoutube = environment.apiUrlYoutube;
-  private readonly maxResults = 14;
+  private readonly maxResults = 1;
 
   private readonly httpClient: HttpClient = inject(HttpClient);
 
-  rechercheVideos(requete: string): Observable<any> {
+  getVideoDetails(requete: string): Observable<any> {
     const url = `${this.apiUrlYoutube}/search?part=snippet&type=video&maxResults=${this.maxResults}&q=${requete}&key=${this.apiKeyYoutube}`;
+    
     return this.httpClient.get(url);
   }
-
 }

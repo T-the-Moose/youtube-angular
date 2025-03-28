@@ -5,11 +5,11 @@
         <div>
             <p>Playlist</p>
             <ul>
-                @for (video of playlist; track playlist) {
+                @for (playlist of playlists; track playlist.videoId) {
                 <li>
-                    {{ video.snippet.title }}
+                    <a class="lien" [routerLink]="['/video', playlist.id.videoId]">{{ playlist.snippet.title }}</a>
                     <div>
-                        <img [src]="deleteVideo" alt="Supprimer" (click)="supprimerVideo(video.snippet.title)">
+                        <img [src]="deleteVideo" alt="Supprimer" (click)="supprimerVideo(playlist.snippet.title)">
                     </div>
                 </li>
                 }
@@ -46,14 +46,6 @@
             </ul>
         </div>
 
-        <!-- @if (idVideoSelectionne) {
-        <div class="video-player">
-            <iframe width="560" height="315" [src]="'https://www.youtube.com/embed/' + idVideoSelectionne"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-        </div>
-        } -->
+
     </div>
 </div>

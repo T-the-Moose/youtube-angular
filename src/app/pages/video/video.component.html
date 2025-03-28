@@ -1,0 +1,20 @@
+
+<div class="titre">
+    <h1>Player</h1>
+</div>
+
+<div class="container">
+    @if (idVideo) {
+    <div>
+        <iframe width="200" height="200" [src]="url | sanitizer" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
+    <div class=".video-info">
+        <h3>{{ infosVideo.snippet.title }}</h3>
+        <p>{{ infosVideo.snippet.description }}</p>
+    </div>
+    }
+</div>
+

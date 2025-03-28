@@ -25,9 +25,8 @@ export class HomeComponent {
       this.isLogged = loggedIn;
     });
 
-    this.youtubeService.rechercheVideos('Angular').subscribe({
+    this.youtubeService.getVideoDetails('Angular').subscribe({
       next: (response) => {
-        // Stocke les vidéos dans le tableau
         this.videos = response.items; 
       },
       error: (err) => {
@@ -35,5 +34,4 @@ export class HomeComponent {
       }
     });
   }
-
 }
