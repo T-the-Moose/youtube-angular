@@ -18,11 +18,11 @@ run :
 ng g environments
 ```
 
-repo should look like :
+Files should look like :
 
 environment.ts
 export const environment = {
-    production: true,
+production: true,
     apiUrlYoutube: "https://www.googleapis.com/youtube/v3",
     apiKeyYoutube : "XXXX"
 };
