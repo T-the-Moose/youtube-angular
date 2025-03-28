@@ -1,3 +1,25 @@
-<aside class="sidebar">
-    <p>Youtube</p>
-</aside>
+<div class ="container">
+    <aside class="sidebar">
+        <p>Youtube</p>
+    </aside>
+
+    <div class="content">
+        @if (isLogged) {
+            <div class="video-list">
+                @for (video of videos; track video.id) {
+                <div class="video-item">
+                    <img [src]="video.snippet.thumbnails.default.url" alt="Thumbnail">
+                    <div class="video-info">
+                        <h3>{{ video.snippet.title }}</h3>
+                        <p>{{ video.snippet.description }}</p>
+                    </div>
+                </div>
+                }
+            </div>
+        } @else {
+            <div class="message">
+                <p>Veuillez vous <a routerLink="/login">connecter ici </a> pour avoir un aperçu des vidéos YouTube Angular</p>
+            </div>
+        }
+    </div>
+</div>

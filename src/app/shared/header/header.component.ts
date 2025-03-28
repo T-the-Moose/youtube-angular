@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { RouterLink, Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -9,5 +10,23 @@ import { RouterLink } from '@angular/router';
 })
 export class HeaderComponent {
   
+  private readonly authService: AuthService = inject(AuthService);
+  private readonly router: Router = inject(Router);
 
+  isLogged: boolean = false;
+  logOut = this.authService.logout()
+
+  ngOnInit(): void {
+
+    this.authService.isLoggedIn$.subscribe((loggedIn) => {
+      this.isLogged = loggedIn;
+      
+    });
+  }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/login']);
+  }
+  
 }

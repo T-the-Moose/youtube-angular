@@ -22,13 +22,18 @@ body {
     gap: 20px;
 }
 
-.navigation a {
+.navigation a,
+.logout-button {
     color: #FFFFFF;
     text-decoration: none;
     font-weight: bold;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
-.navigation a:hover {
+.navigation a:hover,
+.logout-button:hover {
     background-color: #E50914;
     border-radius: 5px;
 }

@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    height: calc(100vh - 60px);
+}
+
+.sidebar {
+    width: 240px;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+.sidebar p {
+    margin: 0;
+    font-size: 1.2em;
+    color: #000000;
+}
+
+.content {
+    padding: 20px;
+    flex-grow: 1;
+    background-color: #f9f9f9;
+    overflow-y: auto;
+}

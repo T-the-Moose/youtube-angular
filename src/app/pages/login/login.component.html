@@ -1,27 +1,34 @@
 <body>
-    <form [formGroup]="formulaireLogin" (ngSubmit)="onSubmit()" class="registration-form">
-        <fieldset>
-            <legend>Formulaire de connexion</legend>
+    <div class="login-container">
+        <h2>Se connecter</h2>
+        <form [formGroup]="formulaireLogin" (ngSubmit)="onSubmit()" class="registration-form">
+            <fieldset>
+                <legend>Formulaire de connexion</legend>
 
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="text" formControlName="email" name="email" id="email" class="form-control">
-                @if (formulaireLogin.get('email')?.hasError('required')){
-                    <span class="error-message">Email obligatoire</span>
-                }
-            </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" formControlName="email" name="email" id="email" class="form-control">
+                    @if (formulaireLogin.get('email')?.hasError('required')){
+                        <span class="error-message">Email obligatoire</span>
+                    }
+                </div>
 
-            <div class="form-group">
-                <label for="password">Mot de Passe</label>
-                <input type="password" formControlName="password" name="password" id="password" class="form-control" required>
-                @if (formulaireLogin.get('email')?.hasError('require')) {
-                    <span class="error-message">Mot de passe obligatoire</span>
-                }
-            </div>
+                <div class="form-group">
+                    <label for="password">Mot de Passe</label>
+                    <input type="password" formControlName="password" name="password" id="password" class="form-control" required>
+                    @if (formulaireLogin.get('email')?.hasError('require')) {
+                        <span class="error-message">Mot de passe obligatoire</span>
+                    }
+                </div>
 
-            <div class="form-group">
-                <button type="submit" class="btn-submit">S'enregistrer</button>
-            </div>
-        </fieldset>
-    </form>
+                <div class="form-group">
+                    <button type="submit" class="btn-submit">S'enregistrer</button>
+                </div>
+            </fieldset>
+        </form>
+
+        <div class="registration-link">
+            <span>Pas encore de compte ? <a routerLink="/register">S'inscrire ici</a></span>
+        </div>
+    </div>
 </body>
